@@ -93,7 +93,7 @@ router.get("/nurses_pag", async (req: Request, res: Response) => {
 
   if (req.query.search){
     query = `SELECT * FROM nurses WHERE first_name LIKE '%${search}%' OR last_name LIKE '%${search}%' OR ward LIKE '%${search}%' ORDER BY employee_id LIMIT ${limit} OFFSET ${offset}`
-    queryCount = `SELECT COUNT(*) FROM nurses WHERE first_name LIKE '%${search}%' OR last_name LIKE '%${search}%' OR last_name LIKE '%${search}%'`
+    queryCount = `SELECT COUNT(*) FROM nurses WHERE first_name LIKE '%${search}%' OR last_name LIKE '%${search}%' OR ward LIKE '%${search}%'`
   } else {
     query = `SELECT * FROM nurses ORDER BY employee_id LIMIT ${limit} OFFSET ${offset}`    
     queryCount = `SELECT COUNT(*) FROM nurses`
